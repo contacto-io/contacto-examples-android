@@ -1,2 +1,2 @@
-# android-consumer-sample-sdk
-Sample SDK to showcase the consumer SDK functionalities
+# android-consumer-sdk
+Android consumer SDK to support chat
