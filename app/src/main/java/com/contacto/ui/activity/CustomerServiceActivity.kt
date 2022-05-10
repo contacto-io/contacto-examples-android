@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.contacto.consumer.android.ContactoClient
 import com.contacto.consumer.android.ui.model.ContactoConfig
+import com.contacto.consumer.android.ui.model.ContactoUser
 import com.contacto.databinding.ActivityCustomerSupportBinding
 
 class CustomerServiceActivity : AppCompatActivity() {
@@ -21,7 +22,11 @@ class CustomerServiceActivity : AppCompatActivity() {
     private fun initUI() {
         val config = ContactoConfig(
             appId = "a4ef65e8-5908-4c65-8b65-52ff7a2bf8eb",
-            appKey = "665255e3914bb5060b0ba7102a8bade8d7dcf21e734093818863ac759725b3f6"
+            appKey = "665255e3914bb5060b0ba7102a8bade8d7dcf21e734093818863ac759725b3f6",
+            user = ContactoUser(
+                mobile = "+918050574001",
+                email = "abcdef@gmail.com"
+            )
         )
 
         binding.llAddressIssue.setOnClickListener {
