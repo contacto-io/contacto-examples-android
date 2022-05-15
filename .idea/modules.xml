@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Contacto.iml" filepath="$PROJECT_DIR$/.idea/modules/Contacto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/InitiateCall/Contacto.InitiateCall.iml" filepath="$PROJECT_DIR$/.idea/modules/InitiateCall/Contacto.InitiateCall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/InitiateChat/Contacto.InitiateChat.iml" filepath="$PROJECT_DIR$/.idea/modules/InitiateChat/Contacto.InitiateChat.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Contacto.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Contacto.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base/Contacto.base.iml" filepath="$PROJECT_DIR$/.idea/modules/base/Contacto.base.iml" />
     </modules>
   </component>
 </project>
