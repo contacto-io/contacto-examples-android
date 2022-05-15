@@ -1,12 +1,12 @@
-package com.contacto.ui.activity
+package com.contacto.consumer.android.example.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.contacto.R
-import com.contacto.databinding.ActivityMainBinding
-import com.contacto.ui.fragments.OrdersFragment
-import com.contacto.ui.fragments.SettingsFragment
+import com.contacto.consumer.android.example.R
+import com.contacto.consumer.android.example.databinding.ActivityMainBinding
+import com.contacto.consumer.android.example.ui.fragments.OrdersFragment
+import com.contacto.consumer.android.example.ui.fragments.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
 

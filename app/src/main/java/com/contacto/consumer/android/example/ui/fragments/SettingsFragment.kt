@@ -1,4 +1,4 @@
-package com.contacto.ui.fragments
+package com.contacto.consumer.android.example.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.contacto.databinding.FragmentSettingsBinding
-import com.contacto.ui.activity.ConfigurationActivity
-import com.contacto.ui.activity.CustomerServiceActivity
+import com.contacto.consumer.android.example.databinding.FragmentSettingsBinding
+import com.contacto.consumer.android.example.ui.activity.ConfigurationActivity
+import com.contacto.consumer.android.example.ui.activity.CustomerServiceActivity
 
 class SettingsFragment : Fragment() {
 

@@ -1,9 +1,9 @@
-package com.contacto.ui.activity
+package com.contacto.consumer.android.example.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.contacto.databinding.ActivityConfigurationBinding
-import com.contacto.ui.fragments.ConfigurationBottomSheet
+import com.contacto.consumer.android.example.databinding.ActivityConfigurationBinding
+import com.contacto.consumer.android.example.ui.fragments.ConfigurationBottomSheet
 
 class ConfigurationActivity : AppCompatActivity() {
 

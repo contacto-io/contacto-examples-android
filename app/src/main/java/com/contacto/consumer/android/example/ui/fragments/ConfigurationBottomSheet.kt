@@ -1,10 +1,10 @@
-package com.contacto.ui.fragments
+package com.contacto.consumer.android.example.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.contacto.R
+import com.contacto.consumer.android.example.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class ConfigurationBottomSheet : BottomSheetDialogFragment() {

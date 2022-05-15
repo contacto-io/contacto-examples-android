@@ -1,11 +1,11 @@
-package com.contacto.ui.fragments
+package com.contacto.consumer.android.example.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.contacto.databinding.FragmentMyOrdersBinding
+import com.contacto.consumer.android.example.databinding.FragmentMyOrdersBinding
 
 class OrdersFragment : Fragment() {
 
