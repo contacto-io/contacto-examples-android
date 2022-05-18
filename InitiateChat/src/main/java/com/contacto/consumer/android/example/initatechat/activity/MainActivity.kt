@@ -22,18 +22,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
+        binding.actionBar.tvTitle.text = "Home"
         binding.bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> {
+                    binding.actionBar.tvTitle.text = "Home"
                     setCurrentFragment(Fragment())
                 }
                 R.id.category -> {
+                    binding.actionBar.tvTitle.text = "Category"
                     setCurrentFragment(Fragment())
                 }
                 R.id.buy -> {
+                    binding.actionBar.tvTitle.text = "My Orders"
                     setCurrentFragment(OrdersFragment())
                 }
                 R.id.settings -> {
+                    binding.actionBar.tvTitle.text = "Profile"
                     setCurrentFragment(SettingsFragment())
                 }
             }

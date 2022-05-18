@@ -29,6 +29,12 @@ class ConfigurationBottomSheet : BottomSheetDialogFragment() {
     }
 
     private fun initUi() {
+        val appId = (requireActivity().application as ICommon).getAppId() ?: ""
+        val appKey = (requireActivity().application as ICommon).getAppKey() ?: ""
+
+        binding.etAppId.setText(appId)
+        binding.etChatKey.setText(appKey)
+
         binding.etAppId.doOnTextChanged { _, _, _, _ ->
             validate()
         }

@@ -150,19 +150,34 @@
 
     </LinearLayout>
 
-    <Button
+    <LinearLayout
         android:id="@+id/btn_chat"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner_stroke_bg"
-        android:text="Chat with us"
-        android:drawableStart="@drawable/ic_chat"
-        android:drawablePadding="16dp"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
+        android:orientation="horizontal"
         android:layout_marginBottom="24dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_chat"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chat with us"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

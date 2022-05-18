@@ -1,6 +1,8 @@
 package com.contacto.consumer.android.example.initatechat.activity
 
 import android.os.Bundle
+import android.view.View.VISIBLE
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.contacto.consumer.android.ContactoClient
 import com.contacto.consumer.android.example.base.ICommon
@@ -8,6 +10,7 @@ import com.contacto.consumer.android.example.initatechat.databinding.ActivityCus
 import com.contacto.consumer.android.ui.model.Config
 import com.contacto.consumer.android.ui.model.ContactoConfig
 import com.contacto.consumer.android.ui.model.ContactoUser
+import com.contacto.consumer.android.utility.ErrorHandler
 
 class CustomerServiceActivity : AppCompatActivity() {
 
@@ -22,6 +25,12 @@ class CustomerServiceActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
+        binding.actionBar1.backAction.visibility = VISIBLE
+        binding.actionBar1.backAction.setOnClickListener {
+            finish()
+        }
+
+        binding.actionBar1.tvTitle.text = "Customer Service"
         val user = ContactoUser(
             mobile = "918050574001",
             email = "abcdef@gmail.com"
@@ -32,21 +41,30 @@ class CustomerServiceActivity : AppCompatActivity() {
         )
 
         val contactoConfig = ContactoConfig(
-            config = config,
-            user = user
+            config = config
         )
 
         binding.llAddressIssue.setOnClickListener {
-            ContactoClient.getInstance().loadChat(this, contactoConfig)
+            loadChat(contactoConfig)
         }
         binding.llOrderIssue.setOnClickListener {
-            ContactoClient.getInstance().loadChat(this, contactoConfig)
+            loadChat(contactoConfig)
         }
         binding.llPaymentIssue.setOnClickListener {
-            ContactoClient.getInstance().loadChat(this, contactoConfig)
+            loadChat(contactoConfig)
         }
         binding.btnChat.setOnClickListener {
-            ContactoClient.getInstance().loadChat(this, contactoConfig)
+            loadChat(contactoConfig)
         }
+    }
+
+    private fun loadChat(config: ContactoConfig) {
+        val appId = (application as ICommon).getAppId() ?: ""
+        val appKey = (application as ICommon).getAppKey() ?: ""
+        if(appId.isEmpty() || appKey.isEmpty()) {
+            Toast.makeText(this, "Please provide AppId and AppKey", Toast.LENGTH_LONG).show()
+            return
+        }
+        ContactoClient.getInstance().loadChat(this, config)
     }
 }
