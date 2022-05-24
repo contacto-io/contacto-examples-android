@@ -1,5 +1,6 @@
 package com.contacto.consumer.android.example.initatechat.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View.VISIBLE
 import android.widget.Toast
@@ -10,7 +11,8 @@ import com.contacto.consumer.android.example.initatechat.databinding.ActivityCus
 import com.contacto.consumer.android.ui.model.Config
 import com.contacto.consumer.android.ui.model.ContactoConfig
 import com.contacto.consumer.android.ui.model.ContactoUser
-import com.contacto.consumer.android.utility.ErrorHandler
+import com.contacto.consumer.android.utility.Constants
+import com.google.android.material.snackbar.Snackbar
 
 class CustomerServiceActivity : AppCompatActivity() {
 
@@ -22,6 +24,14 @@ class CustomerServiceActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initUI()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(resultCode == Constants.ERROR_CODE) {
+            val error = data?.getStringExtra(Constants.PARAM_ERROR)
+            Snackbar.make(binding.root, error ?: "Something went wrong!", Snackbar.LENGTH_SHORT).show()
+        }
     }
 
     private fun initUI() {

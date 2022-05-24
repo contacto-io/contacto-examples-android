@@ -83,6 +83,16 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"/>
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="$50"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -121,10 +131,20 @@
                             android:fontFamily="@font/poppins"
                             android:textColor="#80000000"
                             android:textSize="14sp"
-                            android:text="x10"
+                            android:text="x1"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"/>
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="$20"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -147,7 +167,7 @@
                         android:background="@drawable/rounded_corner_stroke_bg"
                         android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
 
                     <TextView
                         android:id="@+id/btn_chat_1"
@@ -164,7 +184,7 @@
                         android:background="@drawable/rounded_corner_stroke_bg"
                         android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
 
                 </LinearLayout>
 
@@ -186,7 +206,7 @@
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:text="Order #385474920"
+                    android:text="Order #46765936760"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
 
@@ -196,7 +216,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="#80000000"
-                    android:text="1 day ago"
+                    android:text="1 month ago"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
 
@@ -240,6 +260,16 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"/>
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="$50"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -282,6 +312,16 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"/>
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="$20"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -304,7 +344,7 @@
                         android:background="@drawable/rounded_corner_stroke_bg"
                         android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
 
                     <TextView
                         android:id="@+id/btn_chat_2"
@@ -321,7 +361,7 @@
                         android:background="@drawable/rounded_corner_stroke_bg"
                         android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
 
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>

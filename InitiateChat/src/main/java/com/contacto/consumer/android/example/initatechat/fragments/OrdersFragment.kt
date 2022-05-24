@@ -12,7 +12,6 @@ import com.contacto.consumer.android.example.initatechat.databinding.FragmentMyO
 import com.contacto.consumer.android.ui.model.Config
 import com.contacto.consumer.android.ui.model.ContactoConfig
 import com.contacto.consumer.android.ui.model.ContactoUser
-import com.contacto.consumer.android.utility.ErrorHandler
 
 class OrdersFragment : Fragment() {
 
@@ -43,8 +42,7 @@ class OrdersFragment : Fragment() {
         )
 
         val contactoConfig = ContactoConfig(
-            config = config,
-            user = user
+            config = config
         )
 
         binding.btnChat1.setOnClickListener {
