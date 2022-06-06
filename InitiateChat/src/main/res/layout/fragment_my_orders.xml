@@ -308,7 +308,7 @@
                             android:fontFamily="@font/poppins"
                             android:textColor="#80000000"
                             android:textSize="14sp"
-                            android:text="x10"
+                            android:text="x1"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"/>
                     </LinearLayout>

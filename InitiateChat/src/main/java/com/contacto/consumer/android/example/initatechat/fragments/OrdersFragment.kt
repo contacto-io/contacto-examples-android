@@ -9,9 +9,7 @@ import androidx.fragment.app.Fragment
 import com.contacto.consumer.android.ContactoClient
 import com.contacto.consumer.android.example.base.ICommon
 import com.contacto.consumer.android.example.initatechat.databinding.FragmentMyOrdersBinding
-import com.contacto.consumer.android.ui.model.Config
-import com.contacto.consumer.android.ui.model.ContactoConfig
-import com.contacto.consumer.android.ui.model.ContactoUser
+import com.contacto.consumer.android.ui.model.User
 
 class OrdersFragment : Fragment() {
 
@@ -32,35 +30,29 @@ class OrdersFragment : Fragment() {
     }
 
     private fun initUi() {
-        val user = ContactoUser(
-            mobile = "918050574001",
-            email = "abcdef@gmail.com"
-        )
-        val config = Config(
-            appId = (requireActivity().application as ICommon).getAppId() ?: "",
-            appKey = (requireActivity().application as ICommon).getAppKey() ?: ""
-        )
-
-        val contactoConfig = ContactoConfig(
-            config = config
-        )
-
         binding.btnChat1.setOnClickListener {
-            loadChat(contactoConfig)
+            loadChat()
         }
 
         binding.btnChat2.setOnClickListener {
-            loadChat(contactoConfig)
+            loadChat()
         }
     }
 
-    private fun loadChat(config: ContactoConfig) {
+    private fun loadChat() {
         val appId = (requireActivity().application as ICommon).getAppId() ?: ""
         val appKey = (requireActivity().application as ICommon).getAppKey() ?: ""
         if(appId.isEmpty() || appKey.isEmpty()) {
             Toast.makeText(requireContext(), "Please provide AppId and AppKey", Toast.LENGTH_LONG).show()
             return
         }
-        ContactoClient.getInstance().loadChat(requireContext(), config)
+
+        val user = User(
+            mobile = "918050574001",
+            email = "abcdef@gmail.com"
+        )
+
+        ContactoClient.init(appId = appId, appKey = appKey)
+        ContactoClient.loadChat(requireContext(), /*Pass user info*/)
     }
 }

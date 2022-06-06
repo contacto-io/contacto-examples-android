@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: ./base/libs/android-consumer-sdk-debug.aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/1d021ab627a9f65421115ee087832da8/transformed/jetified-android-consumer-sdk-debug/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1d021ab627a9f65421115ee087832da8/transformed/jetified-android-consumer-sdk-debug/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1d021ab627a9f65421115ee087832da8/transformed/jetified-android-consumer-sdk-debug/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/1d021ab627a9f65421115ee087832da8/transformed/jetified-android-consumer-sdk-debug/jars/libs/gson-2.9.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

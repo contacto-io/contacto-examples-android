@@ -44,10 +44,10 @@ class ConfigurationBottomSheet : BottomSheetDialogFragment() {
         }
 
         binding.tvDone.setOnClickListener {
-            val appKey = binding.etChatKey.text.toString()
-            val appId = binding.etAppId.text.toString()
-            if(appId.isNotEmpty() && appKey.isNotEmpty()) {
-                (requireActivity().application as ICommon).savePref(appId, appKey)
+            val key = binding.etChatKey.text.toString()
+            val id = binding.etAppId.text.toString()
+            if(id.isNotEmpty() && key.isNotEmpty()) {
+                (requireActivity().application as ICommon).savePref(id, key)
                 dismiss()
             }
         }
@@ -58,7 +58,7 @@ class ConfigurationBottomSheet : BottomSheetDialogFragment() {
     }
 
     private fun validate() {
-        if(binding.etAppId.text.isNullOrEmpty() || binding.etChatKey.text.isNullOrEmpty()) {
+        if(binding.etAppId.text.isNullOrBlank() || binding.etChatKey.text.isNullOrBlank()) {
             binding.tvDone.isEnabled = false
             binding.tvDone.setTextColor(Color.parseColor("#CDCFD5"))
         } else {

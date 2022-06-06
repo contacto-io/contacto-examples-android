@@ -19,9 +19,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".initatechat.activity.CustomerServiceActivity" />
+        <activity android:name=".initatechat.activity.CustomerServiceActivity"
+            android:screenOrientation="portrait"/>
 
         <activity android:name=".initatechat.activity.ConfigurationActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize"/>
 
         <meta-data
