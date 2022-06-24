@@ -2,6 +2,8 @@ package com.contacto.consumer.android.example.initatechat.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.contacto.consumer.android.example.initatechat.R
@@ -34,22 +36,29 @@ class MainActivity : AppCompatActivity() {
 
     private fun initUI() {
         binding.actionBar.tvTitle.text = "Home"
+        binding.actionBar.chat.setOnClickListener {
+            startActivity(Intent(this, ChatActivity::class.java))
+        }
         binding.bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> {
+                    binding.actionBar.chat.visibility = GONE
                     binding.actionBar.tvTitle.text = "Home"
                     setCurrentFragment(Fragment())
                 }
                 R.id.category -> {
+                    binding.actionBar.chat.visibility = GONE
                     binding.actionBar.tvTitle.text = "Category"
                     setCurrentFragment(Fragment())
                 }
                 R.id.buy -> {
+                    binding.actionBar.chat.visibility = GONE
                     binding.actionBar.tvTitle.text = "My Orders"
                     setCurrentFragment(OrdersFragment())
                 }
                 R.id.settings -> {
                     binding.actionBar.tvTitle.text = "Profile"
+                    binding.actionBar.chat.visibility = VISIBLE
                     setCurrentFragment(SettingsFragment())
                 }
             }
