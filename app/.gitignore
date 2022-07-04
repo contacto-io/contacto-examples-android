@@ -4,7 +4,8 @@
 *.class
 **/bin/
 **/gen/
-.gradle/
+**/.gradle/
+**/.idea/
 build/
 local.properties
 **/proguard/
