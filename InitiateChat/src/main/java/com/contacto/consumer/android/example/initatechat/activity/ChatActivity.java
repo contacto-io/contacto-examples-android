@@ -24,13 +24,13 @@ public class ChatActivity extends AppCompatActivity {
             String appId = ((ICommon) getApplication()).getAppId();
             String appKey = ((ICommon) getApplication()).getAppKey();
             if (appId == null || appKey == null || appId.trim().equals("") || appKey.trim().equals("")) {
-//                Toast.makeText(this, "Please provide AppId and AppKey", Toast.LENGTH_LONG).show();
-//                return;
+                Toast.makeText(this, "Please provide AppId and AppKey", Toast.LENGTH_LONG).show();
+                return;
             }
 
             User user = new User("918050574001", "abcdef@gmail.com");
 
-            ContactoClient.INSTANCE.init("a4ef65e8-5908-4c65-8b65-52ff7a2bf8eb", "665255e3914bb5060b0ba7102a8bade8d7dcf21e734093818863ac759725b3f6");
+            ContactoClient.INSTANCE.init(appId, appKey);
             ContactoClient.INSTANCE.loadChat(this, null);
         });
 
