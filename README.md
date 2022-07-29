@@ -108,7 +108,7 @@ If you have any questions, please email [support@contacto.com](mailto:support@co
 
 ## Contributions
 
-Pull requests are welcome.
+We welcome contributions of any kind including new examples, bug fixes, and documentation improvements. We recommend opening an issue describing what you want to build so that we can discuss how to move forward if it is a major change. For minor changes such as typo fixes and one-liners, go ahead and open a pull request.
 
 ## Bugs
 
