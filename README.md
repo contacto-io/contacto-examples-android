@@ -19,7 +19,7 @@ Contacto SDK clients require devices running Android 10 or higher.
 
 ### Setup
 #### Get your App ID and App Key
-Sign in to your Contacto account (here) as an Administrator. Navigate to Channels > Chat, select the Chat App to be integrated, and navigate the Code tab to access the APP ID and App Key.
+Sign in to your [Contacto account](https://console.contacto.com/) as an Administrator. Navigate to Channels > Chat, select the Chat App to be integrated, and navigate the Code tab to access the APP ID and App Key.
 
 <img width="1431" alt="Auth-credentials-from-Console" src="https://user-images.githubusercontent.com/1241804/181737700-42218645-69ea-4ab0-8756-b7a2f8c1c16e.png">
 
