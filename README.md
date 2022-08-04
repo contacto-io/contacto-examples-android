@@ -7,7 +7,6 @@
    - [Setup](#setup)
    - [Usage](#usage)
 - [Examples](#examples)
-- [Owners](#owners)
 - [Contributions](#contributions)
 - [Bugs](#bugs)
 
@@ -21,7 +20,8 @@ Contacto SDK clients require devices running Android 10 or higher.
 #### Get your App ID and App Key
 Sign in to your [Contacto account](https://console.contacto.com/) as an Administrator. Navigate to Channels > Chat, select the Chat App to be integrated, and navigate the Code tab to access the APP ID and App Key.
 
-<img width="1431" alt="Auth-credentials-from-Console" src="https://user-images.githubusercontent.com/1241804/181737700-42218645-69ea-4ab0-8756-b7a2f8c1c16e.png">
+<img width="1421" alt="auth-credentials-from-contacto-console" src="https://user-images.githubusercontent.com/1241804/182902006-2c2faf19-6979-4b83-8e44-1cc6a95adead.png">
+
 
 #### Add ContactoSDK to your project
 Add the Contacto SDK dependency to the root build.gradle (project/build.gradle)
@@ -45,8 +45,8 @@ Invoke ContactoClient.init() with your APP ID and APP KEY before invoking/ using
 import com.contacto.consumer.android.ContactoClient
 import com.contacto.consumer.android.ui.model.User
 
-appId = "APP ID of the Chat App", // Access the APP ID from the Contacto Console (https://console.contacto.com)
-appKey = "APP Key of the Chat App" // Access the APP Key from the Contacto Console (https://console.contacto.com)
+appId = "{{APP ID of the Chat App}}", // Access the APP ID from the Contacto Console (https://console.contacto.com)
+appKey = "{{APP Key of the Chat App}}" // Access the APP Key from the Contacto Console (https://console.contacto.com)
 
 ContactoClient.init(appId = appId, appKey = appKey)
 ```
@@ -56,8 +56,8 @@ ContactoClient.init(appId = appId, appKey = appKey)
 import com.contacto.consumer.android.ContactoClient
 import com.contacto.consumer.android.ui.model.User
 
-appId = "APP ID of the Chat App", // Access the APP ID from the Contacto Console (https://console.contacto.com)
-appKey = "APP Key of the Chat App" // Access the APP Key from the Contacto Console (https://console.contacto.com)
+appId = "{{APP ID of the Chat App}}", // Access the APP ID from the Contacto Console (https://console.contacto.com)
+appKey = "{{APP Key of the Chat App}}" // Access the APP Key from the Contacto Console (https://console.contacto.com)
 
 ContactoClient.INSTANCE.init(appId, appKey);
 ```
@@ -68,20 +68,20 @@ You can send basic user information at any point to give you more context on the
 ##### Kotlin
 ```Kotlin
 val user = User(
-  mobile = "9180505xxxx",
-  email = "example@email.com"
+  mobile = "{{User's phone number}}",
+  email = "{{User's email address}}"
 )
 ```
 
 ##### Java
 ```Java
 User user = new User(
-  "9180505xxxx", 
-  "example@email.com"
+  "{{User's phone number}}", 
+  "{{User's email address}}"
 );
 ```
 
-#### Launch a Chat Conversation
+#### Initiate a Chat Conversation
 ##### Kotlin
 ```Kotlin
 ContactoClient.loadChat(this, user)
@@ -92,6 +92,21 @@ ContactoClient.loadChat(this, user)
 ContactoClient.INSTANCE.loadChat(this, user);
 ```
 
+#### Handle Errors on Initiating a Conversation
+##### Kotlin
+```Kotlin
+import com.contacto.consumer.android.utility.Constants
+
+@Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == Constants.ERROR_CODE) {
+            String error = data.getStringExtra(Constants.PARAM_ERROR);
+            Snackbar.make(binding.root, error, Snackbar.LENGTH_SHORT).show();
+        }
+    }
+```
+
 ## Examples
 
 The repository contains sample apps to familiarize you with the [Contacto Android SDK](https://search.maven.org/artifact/com.contacto/ContactoSDK). You can re-use the code available here in your own Apps. Each example in this project is a stand-alone Android app, capable of being run independently through Gradle or Android Studio.
@@ -100,10 +115,6 @@ The current list of samples apps are:
 
 - #### [Initiate Chat Conversation](InitiateChat/src/main)
   A demo app showcasing the initiation of chat conversation with the click of a `Chat with Us` button.
-
-## Owners
-
-If you have any questions, please email [support@contacto.com](mailto:support@contacto.com).
 
 ## Contributions
 
