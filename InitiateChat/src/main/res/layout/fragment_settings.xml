@@ -8,29 +8,67 @@
 
     <TextView
         android:id="@+id/tv_profile_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="Sumit Kumar"
+        android:gravity="center"
+        android:text="Alex Nikiforov"
         android:textColor="@color/black"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintEnd_toStartOf="@id/tv_edit"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_profile_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="alex@example.com"
+        android:textColor="#80000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintEnd_toStartOf="@id/tv_edit"
+        app:layout_constraintTop_toBottomOf="@id/tv_profile_name" />
+
+    <TextView
+        android:id="@+id/tv_profile_mobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/poppins"
-        android:text="alex@example.com"
+        android:text="+91 9980965754"
         android:textColor="#80000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_profile_name" />
+        app:layout_constraintTop_toBottomOf="@id/tv_profile_email" />
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/ic_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_profile_name"
+        app:layout_constraintBottom_toBottomOf="@id/tv_profile_mobile"/>
+
+    <TextView
+        android:id="@+id/tv_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:fontFamily="@font/poppins"
+        android:textSize="16sp"
+        android:textColor="#F67952"
+        android:text="Edit"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_profile_name"
+        app:layout_constraintBottom_toBottomOf="@id/tv_profile_name"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/customer_service_tab"
@@ -42,7 +80,7 @@
         android:paddingBottom="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_profile_email">
+        app:layout_constraintTop_toBottomOf="@id/tv_profile_mobile">
         <ImageView
             android:id="@+id/img_chat"
             android:layout_width="40dp"

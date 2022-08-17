@@ -40,6 +40,11 @@ class OrdersFragment : Fragment() {
     }
 
     private fun loadChat() {
+        val fName = (requireActivity().application as ICommon).getFirstName() ?: "Alex"
+        val lName = (requireActivity().application as ICommon).getLastName() ?: "Nikiforov"
+        val email = (requireActivity().application as ICommon).getEmail() ?: "alex@example.com"
+        val phone = (requireActivity().application as ICommon).getPhone() ?: "9980965754"
+
         val appId = (requireActivity().application as ICommon).getAppId() ?: ""
         val appKey = (requireActivity().application as ICommon).getAppKey() ?: ""
         if(appId.isEmpty() || appKey.isEmpty()) {
@@ -48,11 +53,13 @@ class OrdersFragment : Fragment() {
         }
 
         val user = User(
-            mobile = "918050574001",
-            email = "abcdef@gmail.com"
+            firstName = fName,
+            lastName = lName,
+            phoneNumber = phone,
+            email = email
         )
 
         ContactoClient.init(appId = appId, appKey = appKey)
-        ContactoClient.loadChat(requireContext(), /*Pass user info*/)
+        ContactoClient.loadChat(requireContext(), user)
     }
 }

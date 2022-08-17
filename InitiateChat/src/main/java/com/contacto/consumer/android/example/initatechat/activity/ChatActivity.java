@@ -1,5 +1,6 @@
 package com.contacto.consumer.android.example.initatechat.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -11,16 +12,26 @@ import com.contacto.consumer.android.ContactoClient;
 import com.contacto.consumer.android.example.base.ICommon;
 import com.contacto.consumer.android.example.initatechat.databinding.ChatActivityBinding;
 import com.contacto.consumer.android.ui.model.User;
+import com.contacto.consumer.android.utility.Constants;
+import com.google.android.material.snackbar.Snackbar;
 
 public class ChatActivity extends AppCompatActivity {
+
+    ChatActivityBinding binding = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       ChatActivityBinding binding = ChatActivityBinding.inflate(getLayoutInflater());
+        binding = ChatActivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.btnChat.setOnClickListener(v -> {
+
+            String fName = ((ICommon) getApplication()).getFirstName() == null ? "Alex" : "";
+            String lName = ((ICommon) getApplication()).getLastName() == null ? "Nikiforov" : "";
+            String email = ((ICommon) getApplication()).getEmail() == null ? "alex@example.com" : "";
+            String phone = ((ICommon) getApplication()).getPhone() == null ? "9980965754" : "";
+
             String appId = ((ICommon) getApplication()).getAppId();
             String appKey = ((ICommon) getApplication()).getAppKey();
             if (appId == null || appKey == null || appId.trim().equals("") || appKey.trim().equals("")) {
@@ -28,10 +39,15 @@ public class ChatActivity extends AppCompatActivity {
                 return;
             }
 
-            User user = new User("918050574001", "abcdef@gmail.com");
+            User user = new User(
+                    fName,
+                    lName,
+                    phone,
+                    email
+            );
 
             ContactoClient.INSTANCE.init(appId, appKey);
-            ContactoClient.INSTANCE.loadChat(this, null);
+            ContactoClient.INSTANCE.loadChat(this, user);
         });
 
         binding.actionBar1.tvTitle.setText("Chat Now");
@@ -39,5 +55,14 @@ public class ChatActivity extends AppCompatActivity {
         binding.actionBar1.backAction.setOnClickListener(v -> {
             finish();
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == Constants.ERROR_CODE) {
+            String error = data.getStringExtra(Constants.PARAM_ERROR);
+            Snackbar.make(binding.getRoot(), error == null ? "Something went wrong!" : error, Snackbar.LENGTH_SHORT).show();
+        }
     }
 }

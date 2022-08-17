@@ -54,6 +54,11 @@ class CustomerServiceActivity : AppCompatActivity() {
     }
 
     private fun loadChat() {
+        val fName = (application as ICommon).getFirstName() ?: "Alex"
+        val lName = (application as ICommon).getLastName() ?: "Nikiforov"
+        val email = (application as ICommon).getEmail() ?: "alex@example.com"
+        val phone = (application as ICommon).getPhone() ?: "9980965754"
+
         val appId = (application as ICommon).getAppId() ?: ""
         val appKey = (application as ICommon).getAppKey() ?: ""
         if(appId.isEmpty() || appKey.isEmpty()) {
@@ -62,11 +67,13 @@ class CustomerServiceActivity : AppCompatActivity() {
         }
 
         val user = User(
-            mobile = "918050574001",
-            email = "abcdef@gmail.com"
+            firstName = fName,
+            lastName = lName,
+            phoneNumber = phone,
+            email = email
         )
 
         ContactoClient.init(appId = appId, appKey = appKey)
-        ContactoClient.loadChat(this, /*Pass user info*/)
+        ContactoClient.loadChat(this, user)
     }
 }
