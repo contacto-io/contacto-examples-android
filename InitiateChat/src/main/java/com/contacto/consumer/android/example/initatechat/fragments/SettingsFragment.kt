@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.contacto.consumer.android.example.base.ICommon
 import com.contacto.consumer.android.example.initatechat.activity.ConfigurationActivity
 import com.contacto.consumer.android.example.initatechat.activity.CustomerServiceActivity
 import com.contacto.consumer.android.example.initatechat.databinding.FragmentSettingsBinding
@@ -29,6 +30,15 @@ class SettingsFragment : Fragment() {
     }
 
     private fun initUI() {
+        val fName = (requireActivity().application as ICommon).getFirstName() ?: "Alex"
+        val lName = (requireActivity().application as ICommon).getLastName() ?: "Nikiforov"
+        val email = (requireActivity().application as ICommon).getEmail() ?: "alex@example.com"
+        val phone = (requireActivity().application as ICommon).getPhone() ?: "9980965754"
+
+        binding.tvProfileName.text = "$fName $lName"
+        binding.tvProfileEmail.text = email
+        binding.tvProfileMobile.text = phone
+
         binding.customerServiceTab.setOnClickListener {
             Intent(requireActivity(), CustomerServiceActivity::class.java).also {
                 startActivity(it)
@@ -39,6 +49,12 @@ class SettingsFragment : Fragment() {
             Intent(requireActivity(), ConfigurationActivity::class.java).also {
                 startActivity(it)
             }
+        }
+
+        binding.tvEdit.setOnClickListener {
+            UserBottomSheet {
+                initUI()
+            }.show(childFragmentManager, "config")
         }
     }
 }
