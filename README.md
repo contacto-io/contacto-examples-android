@@ -28,13 +28,13 @@ Add the Contacto SDK dependency to the root build.gradle (project/build.gradle)
 
 ##### Gradle Kotlin DSL
 ```Kotlin
-implementation("com.contacto:ContactoSDK:1.0.1-beta")
+implementation("com.contacto:contacto-android:1.0.3")
 ```
 ##### Gradle Groovy DSL
 ```Kotlin
-implementation 'com.contacto:ContactoSDK:1.0.1-beta'
+implementation 'com.contacto:contacto-android:1.0.3'
 ```
-Code snippets to add Contacto SDK using other dependency managers are available [here](https://search.maven.org/artifact/com.contacto/ContactoSDK/1.0.1-beta/aar).
+Code snippets to add Contacto SDK using other dependency managers are available [here](https://search.maven.org/artifact/com.contacto/contacto-android/1.0.3/aar).
 
 ### Usage
 #### Initialize the Contacto SDK
