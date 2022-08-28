@@ -78,6 +78,8 @@ val user = User(
 ##### Java
 ```Java
 User user = new User(
+   {{User's first name}},
+   {{User's last name}},
   "{{User's phone number}}", 
   "{{User's email address}}"
 );
