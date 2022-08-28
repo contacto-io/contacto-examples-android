@@ -68,8 +68,10 @@ You can send basic user information at any point to give you more context on the
 ##### Kotlin
 ```Kotlin
 val user = User(
-  mobile = "{{User's phone number}}",
-  email = "{{User's email address}}"
+   firstName = {{User's first name}},
+   lastName = {{User's last name}},
+   phoneNumber = "{{User's phone number}}",
+   email = "{{User's email address}}"
 )
 ```
 
